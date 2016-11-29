@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home | Zachary Baker</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="page__wrapper">
+      <nav class="page__nav">
+        <ul>
+          <span class="page__logo">
+            <img src="" alt="" />
+          </span>
+          <li class="nav__active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Products</a>
+            <ul class="nav_sub">
+              <li><a href="#">Templates</a></li>
+              <li><a href="#">Photos</a></li>
+              <li><a href="#">Wallpapers</a></li>
+              <li><a href="#">Merchandise</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Gallery</a>
+            <ul class="nav_sub">
+              <li><a href="#">Weddings</a></li>
+              <li><a href="#">Family</a></li>
+              <li><a href="#">Nature</a></li>
+              <li><a href="#">Abstract</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="page__content">
+        <pre>
+          <code class="javascript">
+    $(document).ready(function() {
+      //variables
+      var nav = $(".page__nav");
+      var nav_item = $(".page__nav ul li")
+      var sn = $(".page__nav ul ul");
+      var pc = $(".page__content");
+
+      //get the navigations width and set the "left" for the "dropdown"
+      sn.css("left", nav.width());
+
+      //Bind the different events for the items
+      nav_item.bind("mouseover", open_sub);
+      nav_item.bind("mouseout", close_sub);
+
+      //Open the submenu
+      function open_sub() {
+        var this_offset = $(this).offset().top;
+        $(this).find("ul").css("padding-top", this_offset);
+        $(this).find("ul").css("min-width", "200px");
+      }
+
+      //Close the submenu
+      function close_sub() {
+        $(this).find("ul").css("min-width", "0");
+      }
+    });
+          </code>
+        </pre>
+      </div>
+    </div>
+    <div class="mes">
+      <h1>Welcome</h1>
+      <p>Work and Services are located at the top of the page</p>
+    </div>
+    <div class="footer">
+
+    </div>
+  </body>
+</html>
